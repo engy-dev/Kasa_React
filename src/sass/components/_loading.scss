@@ -1,0 +1,23 @@
+// Loading.module.scss
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 4rem;
+  height: 4rem;
+  border-bottom: 2px solid $red-color; // equivalent to gray-900
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}

@@ -1,0 +1,107 @@
+@import "../variables";
+@import "../mixins";
+@import "../classes";
+
+.container {
+  @include container;
+}
+
+.homeBanner {
+  position: relative;
+  width: 100%;
+  height: 263px;
+  background-image: url("/src/assets/homeBanner.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.75rem;
+  margin-bottom: 2.75rem; // 11 * 0.25rem
+  text-align: center;
+
+  @media (max-width: 768px) {
+    height: 111px;
+    text-align: left;
+  }
+
+  & h1 {
+    color: white;
+    z-index: 20;
+
+    @media (max-width: 768px) {
+      padding-inline: 1rem;
+    }
+  }
+
+  .homeBannerOverlay {
+    background: rgba(0, 0, 0, 0.6);
+    @extend .overlay;
+  }
+}
+
+.content {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+
+  @media (max-width: 1279px) {
+    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    background-color: transparent;
+    padding: 0;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .productLink {
+    position: relative;
+    height: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media (max-width: 767px) {
+      height: 255px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .productInfo {
+      position: absolute;
+      bottom: 1rem;
+      left: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: bold;
+      color: white;
+      z-index: 20;
+    }
+
+    .contentOverlay {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(10, 10, 10, 0) 42%,
+        rgba(4, 4, 4, 0.205) 99.99%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+      @extend .overlay;
+    }
+  }
+}

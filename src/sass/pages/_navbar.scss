@@ -1,0 +1,51 @@
+@import "../variables";
+@import "../mixins";
+@import "../classes";
+
+.navbar {
+  width: 100%;
+
+  .navbarContainer {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+
+    .logo {
+      width: 210px;
+
+      @media (max-width: 767px) {
+        width: 145px;
+      }
+    }
+
+    .navLinks {
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+      font-size: 1.5rem;
+
+      @media (max-width: 767px) {
+        gap: 1.5rem;
+        font-size: 0.75rem;
+      }
+
+      .navLink {
+        &::after {
+          content: "";
+          height: 2px;
+          width: 0px;
+          transition: 0.4s ease;
+          display: block;
+          background-color: #000000;
+        }
+
+        &:focus::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "../variables";
+@import "../mixins";
+@import "../classes";
+
+.starContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+
+  @media (min-width: 768px) {
+    width: 36px;
+    height: 36px;
+  }
+}

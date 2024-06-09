@@ -1,0 +1,72 @@
+@import "./pages/home";
+@import "./pages/houseDetails";
+@import "./pages/about";
+@import "./pages/navbar";
+@import "./pages/footer";
+@import "./pages/notFound404";
+
+@import "./components/imageSlider";
+@import "./components/ratingStar";
+@import "./components/collapseButton";
+@import "./components/loading";
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.5;
+  font-weight: 500;
+  font-style: normal;
+
+  /* color-scheme: light dark; */
+  color: #000000;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  z-index: 20;
+  margin-block: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  margin-block: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  border: 0px;
+}
+
+.minHeight {
+  height: 100%;
+  min-height: 60vh;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
