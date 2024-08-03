@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const CollapseButton = ({ title, children }) => {
+const CollapseButton = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isArray, setIsArray] = useState();
+
+  useEffect(() => {
+    const isArray = Array.isArray(content);
+    setIsArray(isArray);
+  }, [content]);
+
   return (
     <div className="collapseButton">
       <button
@@ -24,7 +31,15 @@ const CollapseButton = ({ title, children }) => {
         </svg>
       </button>
       <div className={`collapseButtonContent ${isOpen ? "open" : ""}`}>
-        <div className="contentInner">{children}</div>
+        <div className="contentInner">
+          {isArray ? (
+            // Équipements type content which are array
+            content.map((data, index) => <p key={index}>{data}</p>)
+          ) : (
+            // Description type content which are string
+            <p>{content}</p>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -4,23 +4,6 @@ import RatingStar from "../../components/RatingStar/RatingStar";
 import CollapseButton from "../../components/CollapseButton/CollapseButton";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import Loading from "../../components/Loading/Loading";
-import houses from '../data/houses.json'; 
-
-
- const { id } = useParams();
-  const navigate = useNavigate();
-
-const currentHouse = houses.find(house => house.id === id);
-    
-    useEffect(() => {
-        if (!currentHouse) {
-            navigate('/error');
-        }
-    }, [currentHouse, navigate]);
-
-    if (!currentHouse) {
-        return null;
-    }
 
 const HouseDetails = () => {
   const { id } = useParams();
